@@ -2,10 +2,8 @@
 ![Task 3](https://github.com/user-attachments/assets/5daf2bbe-292a-4464-abdd-79c1b8549019) <br>
 
 
-![Weak](https://github.com/user-attachments/assets/5154971b-136a-4749-8b7e-72ab65e226b1)
+![Weak](https://github.com/user-attachments/assets/b925dc0f-26e0-479d-a099-b50926425272)
 
+![Moderate](https://github.com/user-attachments/assets/1305e20e-7987-485d-8d99-4f1622c29bd3)
 
-![Moderate](https://github.com/user-attachments/assets/84f571ec-b438-4b62-b242-66c810e41296)
-
-
-![Strong](https://github.com/user-attachments/assets/61ce7fc8-0a08-4969-9b65-cb2f276f1890)
+![Strong](https://github.com/user-attachments/assets/ea651bff-8dfb-4e1a-a81a-292070c46b2e)
