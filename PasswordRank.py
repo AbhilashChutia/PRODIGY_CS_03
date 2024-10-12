@@ -1,7 +1,8 @@
 import re
+import tkinter as tk
+from tkinter import messagebox
 
 def check_password_strength(password):
-    # Initialize the score
     strength_score = 0
     feedback = []
 
@@ -24,12 +25,12 @@ def check_password_strength(password):
         feedback.append("Password should contain at least one number.")
 
     # Criteria 4: Contains special characters
-    if re.search(r'[\W_]', password):  # \W matches any non-alphanumeric character
+    if re.search(r'[\W_]', password):
         strength_score += 1
     else:
         feedback.append("Password should contain at least one special character (e.g., @, #, $, etc.).")
 
-    # Assess overall strength based on score
+
     if strength_score == 4:
         return "Strong Password", feedback
     elif strength_score == 3:
@@ -37,13 +38,38 @@ def check_password_strength(password):
     else:
         return "Weak Password", feedback
 
-# Example usage:
-if __name__ == "__main__":
-    password = input("Enter your password to check: ")
-    strength, feedback = check_password_strength(password)
-    print(f"Password Strength: {strength}")
+
+def on_check_password():
+    password = password_entry.get()
+    if not password:
+        messagebox.showwarning("Input Error", "Please enter a password.")
+        return
     
+    strength, feedback = check_password_strength(password)
+    
+
+    result_message = f"Password Strength: {strength}\n"
     if feedback:
-        print("Feedback for improvement:")
+        result_message += "Feedback for improvement:\n"
         for comment in feedback:
-            print(f"- {comment}")
+            result_message += f"- {comment}\n"
+    
+    messagebox.showinfo("Password Strength Result", result_message)
+
+
+root = tk.Tk()
+root.title("Password Strength Checker")
+
+root.geometry("600x120")
+
+
+instruction_label = tk.Label(root, text="Enter your password to check its strength:")
+instruction_label.pack(pady=10, padx=10)
+
+password_entry = tk.Entry(root, show="", width=30)
+password_entry.pack(pady=5)
+
+check_button = tk.Button(root, text="Check Password Strength", command=on_check_password)
+check_button.pack(pady=10)
+
+root.mainloop()
